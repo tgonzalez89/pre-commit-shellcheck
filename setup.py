@@ -43,10 +43,12 @@ class fetch_executables(Command):
         executables = Path(__file__).parent.resolve() / "executables"
         sys_platform = sys.platform
         platform_machine = platform.machine()
+
         if sys_platform == "darwin" and platform_machine == "arm64":
             platform_machine = "aarch64"
         elif sys_platform == "linux" and platform_machine == "armv7l":
             platform_machine = "armv6hf"
+
         if (executables / f"shellcheck-v{SHELLCHECK_VERSION}.{sys_platform}.{platform_machine}.tar.xz").exists():
             return executables / f"shellcheck-v{SHELLCHECK_VERSION}.{sys_platform}.{platform_machine}.tar.xz"
         elif (
