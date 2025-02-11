@@ -36,7 +36,6 @@ class fetch_executables(Command):
 
     def run(self):
         # Save executable to self.build_temp
-        Path(self.build_temp).mkdir(parents=True, exist_ok=True)
         compressed_path = self._get_compressed_executable_path()
         self._extract_executable(compressed_path)
 
