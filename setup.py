@@ -77,7 +77,7 @@ class fetch_executables(Command):
         )
 
     def _save_executable(self, data):
-        exe_name = "shellcheck" if sys.platform != "win32" else "shellcheck.exe"
+        exe_name = "shellcheck" if sys.platform not in ("win32", "cygwin") else "shellcheck.exe"
         exe_path = Path(self.build_temp) / exe_name
         Path(self.build_temp).mkdir(parents=True, exist_ok=True)
 
