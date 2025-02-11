@@ -1,0 +1,6 @@
+- id: shellcheck
+  name: shellcheck
+  description: Static analysis tool for shell scripts
+  language: python
+  entry: shellcheck
+  types: [shell]
