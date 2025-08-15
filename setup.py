@@ -14,7 +14,7 @@ from pathlib import Path
 from setuptools import setup
 from setuptools.command.install import install as orig_install
 
-SHELLCHECK_VERSION = "0.10.0"
+SHELLCHECK_VERSION = "0.11.0"
 
 
 class build(orig_build):
